@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %> 
+
+<main>
+
+    <% for (let i = posts.length; i > 0; i--)  {%>
+        <a href="post/<%= posts[i - 1].num %>">
+        <div class="posts">
+            <div class="user-data">
+                <img class="avatar-pfp" src="img/default-avatar.png" alt="default user avatar">
+                <h4>Anonymous</h4>
+            </div>
+            <h2><%=posts[i - 1].title%></h2>
+        </div>
+        </a>
+    <%}%>
+</main>
+
+
+<%- include("partials/footer.ejs") %> 

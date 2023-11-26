@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Balinese&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif Balinese', serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFBE9; 
+}
+
+a {
+    text-decoration: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+header, footer {
+    background-color: #AD8B73;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #FFFBE9;
+}
+
+header h1 {
+    font-size: 2.5rem;  
+}
+
+header a {
+    color: #FFFBE9;
+    font-weight: bolder;
+    font-size: 1.25rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+main a {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+}
+
+main div {
+    border: 2px solid #AD8B73;
+    border-radius: 20px;
+    width: 75%;
+    height: 75%;
+}
+
+.posts {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    transition: 0.3s;
+}
+.posts:hover {
+    background-color: #d8d7d4;
+    cursor: pointer;
+}
+
+.user-data {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: none; 
+}
+
+.user-data h4 {
+    margin-left: 10px;
+}
+
+.avatar-pfp {
+    height: 30px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFBE9;
+    padding: 10px;
+    margin-top: auto;
+}
+
+form {
+
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input[type="submit"] {
+    border: none; 
+    font-size: 1.5rem;
+    width: 25rem;
+    background-color: #AD8B73;
+    color: white; 
+}
+form input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+#title-post {
+    font-size: 1.5rem;
+}
+
+textarea {
+    width: 25rem;
+    height: 15rem;
+    resize: none;
+}
+
+.section-post {
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.post-buttons button {
+    border: none;
+    width: 100px;
+    color: #FFFBE9;
+}
+
+.post-description {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    
+}
+.post-description p {
+    word-wrap: break-word;
+}
+
+
+.edit-me {
+    background-color: rgb(100, 100, 226);
+}
+.delete-me {
+    background-color: rgb(199, 91, 91);
+}
+
+@media only screen and (max-width: 431px) { 
+    header {
+        flex-direction: column;
+    }
+}

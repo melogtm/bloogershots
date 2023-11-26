@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %> 
+
+<section class="section-post">
+    <% let clickedPost =  posts.find((post) => post.num == postNum)  %>
+    <div class="post-description">
+        <h1><%= clickedPost.title %></h1>
+
+        <p><%= clickedPost.blog %></p>
+    </div>
+    <div class="post-buttons">
+        <a href="/edit/<%= clickedPost.num %>"><button class="edit-me">Edit</button></a>
+        <a href="/delete/<%= clickedPost.num %>"><button class="delete-me">Delete </button></a>
+    </div>
+</section>
+
+<%- include("partials/footer.ejs") %> 
