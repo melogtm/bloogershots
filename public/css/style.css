@@ -4,7 +4,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Serif Balinese', serif;
     box-sizing: border-box;
 }
 
@@ -20,25 +19,17 @@ button:hover{
     cursor: pointer;
 }
 
-header, footer {
+nav, footer {
     background-color: #AD8B73;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    color: #FFFBE9;
-}
-
-header h1 {
+nav h2 {
     font-size: 2.5rem;  
 }
 
-header a {
-    color: #FFFBE9;
-    font-weight: bolder;
+nav a {
+    color: #AD8B73;
+    text-decoration: none;
     font-size: 1.25rem;
 }
 
@@ -71,8 +62,7 @@ main div {
     background-color: #d8d7d4;
     cursor: pointer;
 }
-
-.user-data {
+.user-data{
     display: flex;
     align-items: center;
     padding: 10px;
@@ -85,19 +75,6 @@ main div {
 
 .avatar-pfp {
     height: 30px;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #FFFBE9;
-    padding: 10px;
-    margin-top: auto;
 }
 
 form {
@@ -152,7 +129,6 @@ textarea {
     word-wrap: break-word;
 }
 
-
 .edit-me {
     background-color: rgb(100, 100, 226);
 }
@@ -160,8 +136,11 @@ textarea {
     background-color: rgb(199, 91, 91);
 }
 
-@media only screen and (max-width: 431px) { 
-    header {
-        flex-direction: column;
-    }
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    color: #FFFBE9;
+
 }

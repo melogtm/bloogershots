@@ -2,15 +2,12 @@ import express from "express";
 import bodyParser from "body-parser"; 
 
 const app = express(); 
+const port = 3000;
+let posts = []
+
 app.set('view engine', 'ejs'); 
 app.set('views', './views'); 
-
-const port = 3001;
-
-var posts = []
-
 app.use(express.static("public")); 
-
 app.use(bodyParser.urlencoded({extended: true}));
 
 let id = 1; 
@@ -28,7 +25,6 @@ function createPost(req, res, next) {
 
         posts.push({num: id, title: req.body["title"], blog: req.body["text"]});
     }
-
     next(); 
 }
 
