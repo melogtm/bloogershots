@@ -48,7 +48,7 @@
    ```sh
    npm install
    ```
-3. Run server, you can set up another port if ```3001``` is being used
+3. Run server, you can set up another port if ```3000``` is being used
    ```sh
    node index.js
    ```
