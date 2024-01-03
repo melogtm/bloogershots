@@ -5,11 +5,27 @@
     <link rel="stylesheet" href="/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Posts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
-<body>
-    <nav class="p-3 navbar ">
-        <a class="navbar-brand text-white" href="#"><h2>BloogerShots</h2></a>
-
-        <button type="button" class="btn btn-light"><a href="/create">Create Post</a></button>
-    </nav>
+<body class="flex flex-col min-h-screen">
+    <nav class="bg-dark-coffee">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex flex-col-reverse h-16 items-center justify-center p-10 sm:flex-row">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div class="flex flex-shrink-0 items-center">
+                <a href="#"><h2 class="text-3xl font-extrabold leading-none tracking-tight text-lightest-coffee md:text-4xl dark:text-white">BloogerShots</h2></a>
+              </div>
+              <div class="hidden sm:ml-6 sm:block">
+              </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" class="font-black relative rounded-full bg-dark-coffee p-1 text-lightest-coffee hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <a href="/create">Create Post</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      
+     
+      </nav>
