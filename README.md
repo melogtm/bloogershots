@@ -17,6 +17,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="work-in-progress">W.I.P</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -27,6 +28,17 @@
   </ol>
 </details>
 
+## W.I.P
+- [ ] Import Tailwind to Project in total (in progress...)
+- [ ] Import Postgres  
+- [ ] Login/Signup to the application
+- [ ] Create articles
+- [ ] View list of all the articles
+- [ ] Edit/Delete his/her own articles
+- [ ] Add categories, tags and filters to list blog page
+- [ ] Follow other article authors
+- [ ] Favorite/like articles
+- [ ] Add comment to the articles  
 
 <!-- GETTING STARTED -->
 ## Getting Started
