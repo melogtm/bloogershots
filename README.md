@@ -29,8 +29,8 @@
 </details>
 
 ## W.I.P
-- [ ] Import Tailwind to Project in total (in progress...)
-- [ ] Import Postgres  
+- [X] Import Tailwind to Project in total
+- [X] Import Postgres  
 - [ ] Login/Signup to the application
 - [ ] Create articles
 - [ ] View list of all the articles
