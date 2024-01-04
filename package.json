@@ -6,15 +6,18 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/style.css --watch"
+    "dev": "tailwindcss -i ./public/css/tailwind.css -o ./public/css/style.css --watch",
+    "node": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.4.16",
     "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "pg": "^8.11.3",
     "postcss": "^8.4.32",
     "postcss-cli": "^11.0.0"
   },

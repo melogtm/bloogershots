@@ -13,6 +13,8 @@ yarn.lock
 yarn-error.log
 types/generated/*.d.ts
 
+.env
+
 .turbo
 
 # Perf related files

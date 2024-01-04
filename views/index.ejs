@@ -1,17 +1,17 @@
 <%- include("partials/header.ejs") %> 
 
-<main>
-    <% for (let i = posts.length; i > 0; i--)  {%>
-        <a href="post/<%= posts[i - 1].num %>">
-        <div class="posts">
-            <div class="user-data">
-                <img class="avatar-pfp" src="img/default-avatar.png" alt="default user avatar">
-                <h4>Anonymous</h4>
-            </div>
-            <h2><%=posts[i - 1].title%></h2>
-        </div>
-        </a>
-    <%}%>
+<%- include("./components/Input.ejs") %> 
+
+<main class="p-11 pt-0">
+    <!-- Example How to Render Posts
+    <ol class="relative">                  
+        <li class="mb-10 ms-4 hover:cursor-pointer hover:bg-gray-200 transition-all	p-3">
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">April 2018 - By John Well</time>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">I want to...</h3>
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident...</p>
+        </li>
+    </ol>
+    -->
 </main>
 
 
