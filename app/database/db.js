@@ -9,7 +9,7 @@ const dbPool = new Pool({
     host: process.env.DBHOST,
     database:process.env.DBNAME,
     password: process.env.DBPASS,
-    port: 54321
+    port: 5432
 });
 
 async function query(stringsql, params) {

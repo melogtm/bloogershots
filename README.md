@@ -31,7 +31,7 @@
 ## W.I.P
 - [X] Import Tailwind to Project in total
 - [X] Import Postgres  
-- [ ] Login/Signup to the application
+- [X] Login/Signup to the application
 - [ ] Create articles
 - [ ] View list of all the articles
 - [ ] Edit/Delete his/her own articles
