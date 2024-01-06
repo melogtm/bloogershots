@@ -29,9 +29,36 @@ async function isPasswordCorrect(plainPass, databasePass) {
     return matched; 
 };
 
+async function getUserById(id) {
+    const userById = await query("SELECT * FROM users WHERE id = $1", [id]);
+
+    return userById.rows[0]; 
+};
+
+// Posts Functions 
+async function createPost(post_info) {
+    const post = await query(
+        "INSERT INTO posts(user_id, post_text, date) VALUES ($1, $2, $3) RETURNING post_id, user_id, post_text, date", 
+        [post_info.user, post_info.thought, post_info.post_date]
+    ); 
+
+    if (post.rowCount === 0) return false;
+    return post.rows[0]; 
+};
+
+async function listPosts() {
+    // ORDER BY date DESC - Newest posts first. 
+    const posts = await query("SELECT * FROM posts ORDER BY date DESC"); 
+
+    if (posts.rowCount === 0) return []; 
+    return posts.rows; 
+};
 
 export {
     createUser,
     userAlreadyExists, 
-    isPasswordCorrect
+    isPasswordCorrect,
+    getUserById,
+    listPosts,
+    createPost
 }; 

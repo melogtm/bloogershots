@@ -4,8 +4,9 @@ import bodyParser from "body-parser";
 import session from 'express-session'; 
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
-import { createUser, isPasswordCorrect, userAlreadyExists } from './app/database/dbfuncs.js';
-import query from './app/database/db.js';
+import { 
+    createUser, isPasswordCorrect, userAlreadyExists, createPost, getUserById, listPosts
+} from './app/database/dbfuncs.js';
 
 const app = express(); 
 const port = 3000;
@@ -66,9 +67,7 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser(async (id, done) => {
     try {
-        const userById = await query("SELECT * FROM users WHERE id = $1", [id]);
-
-        const user = userById.rows[0]; 
+        const user = await getUserById(id);  
 
         done(null, user); 
     } catch (error) {
@@ -81,9 +80,19 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 
 // Handling Routes - GETs
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
     if (req.isAuthenticated()) {
-        res.render("index", {user: req.user}); 
+        const posts = await listPosts(); 
+
+        let userInfo; 
+
+        for (let i = 0; i < posts.length; i++) {
+            userInfo = await getUserById(posts[i].user_id)
+
+            posts[i]['username'] = userInfo.username; 
+        };
+
+        res.render("index", {user: req.user, posts}); 
     } else {
         res.redirect("/login"); 
     }
@@ -111,6 +120,18 @@ app.get("/logout", (req, res) => {
 app.post("/login", passport.authenticate('local-login', {failureMessage: true, failureRedirect: '/login', successRedirect: '/'}));
 
 app.post("/register", passport.authenticate('local-register', {failureRedirect: '/register', successRedirect: '/login'}));
+
+app.post("/", async (req, res) => {
+    const newPost = {
+        ...req.body,
+        post_date: new Date(),
+        user: req.user.id, 
+    };
+
+    const post = await createPost(newPost); 
+
+    res.redirect("/"); 
+});
 
 app.listen(port, () => {
     console.log(`Listening in port ${port}.`); 
