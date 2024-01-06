@@ -83,7 +83,7 @@ app.use(passport.session());
 // Handling Routes - GETs
 app.get("/", (req, res) => {
     if (req.isAuthenticated()) {
-        res.render("index"); 
+        res.render("index", {user: req.user}); 
     } else {
         res.redirect("/login"); 
     }
