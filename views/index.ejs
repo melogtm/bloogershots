@@ -22,6 +22,14 @@
  </form>
 
 <main class="p-11 pt-0">
+    <ul class="flex mb-5">
+        <li class="mr-6">
+        <a class="text-dark-coffee hover:text-light-dark-coffee" href="/">All Posts</a>
+        </li>
+        <li class="mr-6">
+        <a class="text-dark-coffee hover:text-light-dark-coffee" href="/user?id=<%= user.id %>">My Posts</a>
+        </li>
+    </ul>
     <ol class="relative">
         <% const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'}; %>
         <% locals.posts.map((post) => {%>

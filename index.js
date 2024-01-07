@@ -10,6 +10,7 @@ import {
 
 const app = express(); 
 const port = 3000;
+let posts = await listPosts(); 
 
 // Config Express
 app.set('view engine', 'ejs'); 
@@ -82,8 +83,6 @@ app.use(passport.session());
 // Handling Routes - GETs
 app.get("/", async (req, res) => {
     if (req.isAuthenticated()) {
-        const posts = await listPosts(); 
-
         let userInfo; 
 
         for (let i = 0; i < posts.length; i++) {
@@ -116,6 +115,18 @@ app.get("/logout", (req, res) => {
     });
 });
 
+app.get("/user", (req, res) => {
+    if (req.isAuthenticated()) {
+        const userId = parseInt(req.query.id); 
+
+        const postsFromUser = posts.filter((post) => post.user_id == userId);
+        
+        res.render("index", {user: req.user, posts: postsFromUser}); 
+    } else {
+        res.redirect("/login"); 
+    }
+});
+
 // Handling Routes - POSTs
 app.post("/login", passport.authenticate('local-login', {failureMessage: true, failureRedirect: '/login', successRedirect: '/'}));
 
@@ -128,7 +139,9 @@ app.post("/", async (req, res) => {
         user: req.user.id, 
     };
 
-    const post = await createPost(newPost); 
+    await createPost(newPost); 
+
+    posts = await listPosts(); 
 
     res.redirect("/"); 
 });
