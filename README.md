@@ -3,14 +3,14 @@
   <p align="center">
     Blog system built with ExpressJS and EJS.
     <br />
-    <a href="https://github.com/melogtm/basic-node-blog"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/melogtm/bloogershots"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/melogtm/basic-node-blog">View Demo</a>
+    <a href="https://github.com/melogtm/bloogershots">View Demo</a>
     ·
-    <a href="https://github.com/melogtm/basic-node-blog/issues">Report Bug</a>
+    <a href="https://github.com/melogtm/bloogershots/issues">Report Bug</a>
     ·
-    <a href="https://github.com/melogtm/basic-node-blog/issues">Request Feature</a>
+    <a href="https://github.com/melogtm/bloogershots/issues">Request Feature</a>
   </p>
 </div>
 
@@ -62,7 +62,7 @@
    ```
 3. Run server, you can set up another port if ```3000``` is being used
    ```sh
-   node index.js
+   npm run node
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
