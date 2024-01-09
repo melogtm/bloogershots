@@ -54,11 +54,26 @@ async function listPosts() {
     return posts.rows; 
 };
 
+async function deletePost(id, user_id) {
+    const post = (await query("SELECT * FROM posts WHERE post_id = $1", [id])).rows[0];
+
+    if (post.user_id == user_id) {
+        const deletedPost = await query("DELETE FROM posts WHERE post_id = $1 RETURNING *", [id]);
+        
+        if (deletedPost.rowCount === 0) return []; 
+        
+        return deletedPost.rows; 
+    } else {
+        return false; 
+    };
+};
+
 export {
     createUser,
     userAlreadyExists, 
     isPasswordCorrect,
     getUserById,
     listPosts,
-    createPost
+    createPost,
+    deletePost
 }; 

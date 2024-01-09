@@ -35,8 +35,7 @@
 - [X] Create articles
 - [X] View list of all the articles
 - [ ] Edit/Delete his/her own articles
-- [ ] Add categories, tags and filters to list blog page
-- [ ] Follow other article authors
+- [ ] Add filters to list blog page
 - [ ] Favorite/like articles
 - [ ] Add comment to the articles  
 
@@ -54,7 +53,7 @@
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/melogtm/basic-node-blog
+   git clone https://github.com/melogtm/bloogershots
    ```
 2. Install NPM packages
    ```sh

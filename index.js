@@ -5,7 +5,7 @@ import session from 'express-session';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { 
-    createUser, isPasswordCorrect, userAlreadyExists, createPost, getUserById, listPosts
+    createUser, isPasswordCorrect, userAlreadyExists, createPost, getUserById, listPosts, deletePost
 } from './app/database/dbfuncs.js';
 
 const app = express(); 
@@ -83,6 +83,9 @@ app.use(passport.session());
 // Handling Routes - GETs
 app.get("/", async (req, res) => {
     if (req.isAuthenticated()) {
+
+        posts = await listPosts(); // Update Posts
+
         let userInfo; 
 
         for (let i = 0; i < posts.length; i++) {
@@ -125,6 +128,16 @@ app.get("/user", (req, res) => {
     } else {
         res.redirect("/login"); 
     }
+});
+
+app.get("/delete", async (req, res) => {
+    if (req.isAuthenticated()) {
+        const response = await deletePost(parseInt(req.query.id), req.user.id); 
+
+        res.redirect("/");  
+    } else {
+        res.redirect("/login"); 
+    };
 });
 
 // Handling Routes - POSTs
