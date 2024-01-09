@@ -1,3 +1,4 @@
+<p align="center"><img height=300 src="public/img/site-teaser.png"></p>
 <h3 align="center">BloogerShots</h3>
 
   <p align="center">
@@ -17,7 +18,7 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="work-in-progress">W.I.P</a></li>
+    <li><a href="functionalities">Functionalities</li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -28,9 +29,7 @@
   </ol>
 </details>
 
-## W.I.P
-- [X] Import Tailwind to Project in total
-- [X] Import Postgres  
+## Functionalities
 - [X] Login/Signup to the application
 - [X] Create articles
 - [X] View list of all the articles
