@@ -124,7 +124,7 @@ app.get("/user", (req, res) => {
 
         const postsFromUser = posts.filter((post) => post.user_id == userId);
         
-        res.render("index", {user: req.user, posts: postsFromUser}); 
+        res.render("index", {user: req.user, posts: postsFromUser, isEditing: false}); 
     } else {
         res.redirect("/login"); 
     }
