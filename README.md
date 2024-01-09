@@ -34,10 +34,10 @@
 - [X] Login/Signup to the application
 - [X] Create articles
 - [X] View list of all the articles
-- [ ] Edit/Delete his/her own articles
+- [X] Edit/Delete his/her own articles
 - [ ] Add filters to list blog page
 - [ ] Favorite/like articles
-- [ ] Add comment to the articles  
+- [ ] Add comment to the articles 
 
 <!-- GETTING STARTED -->
 ## Getting Started

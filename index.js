@@ -5,7 +5,7 @@ import session from 'express-session';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { 
-    createUser, isPasswordCorrect, userAlreadyExists, createPost, getUserById, listPosts, deletePost
+    createUser, isPasswordCorrect, userAlreadyExists, createPost, getUserById, listPosts, updatePost, deletePost
 } from './app/database/dbfuncs.js';
 
 const app = express(); 
@@ -94,7 +94,7 @@ app.get("/", async (req, res) => {
             posts[i]['username'] = userInfo.username; 
         };
 
-        res.render("index", {user: req.user, posts}); 
+        res.render("index", {user: req.user, posts, isEditing: false}); 
     } else {
         res.redirect("/login"); 
     }
@@ -130,9 +130,23 @@ app.get("/user", (req, res) => {
     }
 });
 
+app.get("/edit", async (req, res) => {
+    if (req.isAuthenticated()) {
+        const post = posts.filter((post) => post.post_id == req.query.id)[0]; 
+
+        if (post.user_id === req.user.id) {
+            res.render("edit-post", {user: req.user, isEditing: true, thought: post.post_text}); 
+        } else {
+            res.redirect("/"); 
+        };
+    } else {
+        res.redirect("/login"); 
+    };
+});
+
 app.get("/delete", async (req, res) => {
     if (req.isAuthenticated()) {
-        const response = await deletePost(parseInt(req.query.id), req.user.id); 
+        await deletePost(parseInt(req.query.id), req.user.id); 
 
         res.redirect("/");  
     } else {
@@ -157,6 +171,16 @@ app.post("/", async (req, res) => {
     posts = await listPosts(); 
 
     res.redirect("/"); 
+});
+
+app.post("/edit", async (req, res) => {
+
+    const newThought = req.body.thought; 
+    const postId = parseInt(req.query.id); 
+
+    await updatePost(postId, newThought); 
+
+    res.redirect("/");
 });
 
 app.listen(port, () => {

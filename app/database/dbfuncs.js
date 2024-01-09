@@ -54,6 +54,13 @@ async function listPosts() {
     return posts.rows; 
 };
 
+async function updatePost(id, new_text) {
+    const post = await query("UPDATE posts SET post_text = $1 WHERE post_id = $2 RETURNING *", [new_text, id]);
+    
+    if (post.rowCount === 0) return false; 
+    return post.rows[0]; 
+};
+
 async function deletePost(id, user_id) {
     const post = (await query("SELECT * FROM posts WHERE post_id = $1", [id])).rows[0];
 
@@ -75,5 +82,6 @@ export {
     getUserById,
     listPosts,
     createPost,
+    updatePost,
     deletePost
 }; 
