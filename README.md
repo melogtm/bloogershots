@@ -35,9 +35,6 @@
 - [X] Create articles
 - [X] View list of all the articles
 - [X] Edit/Delete his/her own articles
-- [ ] Favorite/like articles
-- [ ] Add filters to list blog page
-- [ ] Add comment to the articles 
 
 <!-- GETTING STARTED -->
 ## Getting Started
